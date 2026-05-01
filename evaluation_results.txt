@@ -1,0 +1,78 @@
+==============================================================
+  OncoGraph X -- GNN EVALUATION REPORT
+  Generated : 2026-05-01  21:11:16
+  Model     : models/clinical_twin_gnn.pth
+  Device    : CPU
+==============================================================
+
+--------------------------------------------------------------
+  GRAPH STATISTICS
+--------------------------------------------------------------
+  Patients (nodes):                    692
+  Clinical-twin edges:                 42,282
+  Input feature dimensions:            22
+  Trainable parameters:                13,379
+
+--------------------------------------------------------------
+  CLASS DISTRIBUTION  --  Task A: Recurrence
+--------------------------------------------------------------
+  No Recurrence  (label 0):            532  (76.9%)
+  Recurrence     (label 1):            160  (23.1%)
+  Imbalance ratio (neg/pos):           3.33
+
+==============================================================
+  TASK A -- RECURRENCE CLASSIFICATION  (Binary)
+==============================================================
+
+  Accuracy:                            0.9986   (99.86%)
+  Balanced Accuracy:                   0.9969
+  Precision  (PPV):                    1.0000
+  Recall     (Sensitivity):            0.9938
+  Specificity (TNR):                   1.0000
+  F1 Score:                            0.9969
+  Matthews Corr. Coef.:                0.9959
+  ROC-AUC:                             1.0000
+  PR-AUC (Avg. Precision):             1.0000
+
+  Confusion Matrix:
+                        Predicted 0    Predicted 1
+  Actual 0 (No Rec.)         532             0      
+  Actual 1 (Recur.)           1             159     
+
+  Per-class Classification Report:
+  precision    recall  f1-score   support
+  
+  No Recurrence       1.00      1.00      1.00       532
+     Recurrence       1.00      0.99      1.00       160
+  
+       accuracy                           1.00       692
+      macro avg       1.00      1.00      1.00       692
+   weighted avg       1.00      1.00      1.00       692
+
+==============================================================
+  TASK B -- SURVIVAL SCORE REGRESSION  (0-1 scale)
+==============================================================
+
+  Mean Squared Error (MSE):            0.038199
+  Root MSE (RMSE):                     0.195445
+  Mean Absolute Error (MAE):           0.157355
+  R² Score:                            0.2823
+  Explained Variance Score:            0.2823
+  C-Index (concordance est.):          0.6919
+
+  Per-status MAE breakdown:
+    MAE — Living patients:             0.167984
+    MAE — Deceased patients:           0.128440
+
+--------------------------------------------------------------
+  INTERPRETATION GUIDE
+--------------------------------------------------------------
+  ROC-AUC  > 0.80  → Good discrimination
+  PR-AUC          → More informative under class imbalance
+  MCC             → Best single metric for imbalanced binary tasks
+  C-Index > 0.70  → Acceptable survival ranking ability
+  R²      > 0.60  → Meaningful regression fit
+
+==============================================================
+  END OF REPORT
+==============================================================
