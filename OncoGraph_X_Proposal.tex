@@ -1,0 +1,71 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fontawesome5}
+
+% Custom Colors
+\definecolor{oncoBlue}{RGB}{0, 51, 102}
+\definecolor{heading}{RGB}{0, 51, 102}
+\definecolor{accent}{RGB}{100, 100, 100}
+
+% Title Formatting
+\titleformat{\section}{\large\bfseries\color{heading}}{}{0em}{}[\titlerule]
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{heading} MUHAMMAD OSAMA}\\[3pt]
+    {\normalsize\color{accent}Software Engineer -- Python}\\[4pt]
+    \small
+    \faEnvelope\ \href{mailto:ocama_aslam@outlook.com}{ocama\_aslam@outlook.com} \quad
+    \faPhone\ +92\,327\,293\,1163 \quad
+    \faGithub\ \href{https://github.com/OcamaAslam}{OcamaAslam} \quad
+    \faLinkedin\ \href{https://linkedin.com/in/ocama-mohamed}{ocama-mohamed} \quad
+    \faGlobe\ \href{https://www.artfolio.tech/osama}{Portfolio}
+\end{center}
+
+\vspace{1em}
+\begin{center}
+    {\huge\bfseries\color{heading} OncoGraph X: Project Proposal} \\
+    {\large\color{accent} Explainable Clinical Twin Analytics for Precision Oncology}
+\end{center}
+\vspace{1.5em}
+
+\section{Executive Summary}
+OncoGraph X is a Clinical Decision Support System (CDSS) designed to enhance cancer recurrence and survival prediction. The platform utilizes an \textbf{Explainable Clinical Twin (XCT)} architecture, leveraging Graph Neural Networks (GNNs) to identify historical patients with similar profiles. This provides oncologists with transparent, evidence-based predictions grounded in comparative clinical data.
+
+\section{The Clinical Twin Methodology}
+The core innovation of OncoGraph X is the \textbf{Patient Similarity Graph}. Unlike traditional models that treat patients as isolated data points, OncoGraph X models the relationships between them:
+\begin{itemize}[noitemsep]
+    \item \textbf{Network Construction:} Patients are connected in a graph based on shared clinical markers, such as Primary Tumor Site and Pathological T-Stage.
+    \item \textbf{Weighted Similarity:} Connections are weighted based on the proximity of histological grading and nodal status (pN-Stage).
+    \item \textbf{Multi-modal Integration:} The system integrates 22 features across blood work, pathological reports, and patient demographics.
+\end{itemize}
+
+\section{Technical Architecture}
+The system utilizes a dual-task \textbf{GraphSAGE Encoder} architecture to process patient data:
+\begin{enumerate}[noitemsep]
+    \item \textbf{Feature Aggregation:} The GNN aggregates insights from a patient's ``twins'' to derive a robust risk profile.
+    \item \textbf{Dual Prediction Heads:} Simultaneously predicts recurrence probability and estimated survival scores.
+    \item \textbf{Explainability Engine:} Highlights specific clinical markers (e.g., blood protein levels) that most significantly influence a patient's specific prediction.
+\end{enumerate}
+
+\section{Key Features}
+\begin{itemize}
+    \item \textbf{Clinical Twin Dashboard:} Interactive visualization of patient proximity and historical outcomes.
+    \item \textbf{Feature Importance:} Transparent breakdown of the clinical drivers behind every risk score.
+    \item \textbf{Interactive Risk Assessment:} Real-time updates of risk scores based on adjustable clinical inputs.
+    \item \textbf{Evidence-Based Reporting:} Identification of specific historical cases that justify the model's output.
+\end{itemize}
+
+\section{Data Disclosure}
+\textbf{Note:} All clinical data, patient statistics, and performance benchmarks referenced in this project were generated using \textbf{synthetic statistical methods}. This synthetic dataset is designed to mimic real-world oncological patterns for research, development, and demonstration purposes while maintaining absolute data privacy.
+
+\section{Conclusion}
+OncoGraph X bridges the gap between complex AI and clinical intuition. By anchoring predictions in the ``Clinical Twin'' framework, it offers a transparent path forward for high-stakes medical decision-making.
+
+\end{document}
